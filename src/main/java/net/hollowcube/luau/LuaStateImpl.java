@@ -644,7 +644,7 @@ final class LuaStateImpl implements LuaState {
             case OK -> {
             }
             case ERRRUN -> {
-                throw new RuntimeException(toString(1));
+                throw new RuntimeException(toString(-1));
             }
             default -> {
                 throw new RuntimeException("unexpected pcall error: " + status);
