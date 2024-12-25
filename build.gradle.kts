@@ -40,29 +40,26 @@ tasks.withType<Jar> {
 
 tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
-    options.compilerArgs.add("--enable-preview")
 }
 
 tasks.javadoc {
     (options as StandardJavadocDocletOptions).run {
         encoding = "UTF-8"
-        addStringOption("source", "21")
-        addBooleanOption("-enable-preview", true)
+        addStringOption("source", "23")
     }
 }
 
 tasks.test {
     useJUnitPlatform()
 
-    jvmArgs("--enable-preview")
 }
 
 java {
     withSourcesJar()
     withJavadocJar()
 
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
+    sourceCompatibility = JavaVersion.VERSION_23
+    targetCompatibility = JavaVersion.VERSION_23
 }
 
 allprojects {
